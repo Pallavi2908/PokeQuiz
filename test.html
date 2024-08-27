@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Quiz</title>
+    <link rel="icon" href="favicon.ico" type="image/png" />
+
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-container">
+        <div><h2 id="question-text"></h2></div>
+        <div><img id="silhouette" src="" alt="Pokémon silhouette" /></div>
+        <div class="options">
+          <button class="option-btn" data-option="1">Option 1</button>
+          <button class="option-btn" data-option="2">Option 2</button>
+          <button class="option-btn" data-option="3">Option 3</button>
+          <button class="option-btn" data-option="4">Option 4</button>
+        </div>
+      </div>
+    </div>
+    <audio
+      id="hoverOption"
+      src="assets/audio/menu_sound.mp3"
+      preload="auto"
+    ></audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hoverOption = document.getElementById("hoverOption");
+        const containers = document.querySelectorAll(".option-btn");
+        console.log(hoverOption, containers);
+        containers.forEach((optionBtn) => {
+          console.log(optionBtn);
+          optionBtn.addEventListener("mouseenter", () => {
+            console.log("Mouse entered button script"); // Debugging
+            hoverOption.currentTime = 0;
+            hoverOption.play();
+          });
+
+          // optionBtn.addEventListener("mouseout", () => {
+          //   hoverOption.pause();
+          //   hoverOption.currentTime = 0;
+          // });
+        });
+      });
+    </script>
+
+    <audio id="cry-audio" preload="auto"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+# Images to pull
+
+version: "4.32"
+services:
+  www:
+    image: php:8.2-apache
+    volumes:
+      - "/C/Users/Rajesh Sinha/Desktop/PokeQuiz:/var/www/html" #sync  local dir with container web dir
+    networks:
+      - backend
+    ports:
+      - "80:80"
+      - "443:443" #SSL
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=php_docker
+      - MYSQL_USER=php_docker
+      - MYSQL_PASSWORD=password
+      - MYSQL_ALLOW_EMPTY_PASSWORD= true
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d" #sync sql files with container consistently
+    networks:
+      - backend
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8001:80 #binding port 8001 on PC to port 80 of docker container
+    environment:
+      - PMA_HOST=db #defining name of service for phpmyadmin
+      - PMA_PORT=3306 #default for mysql
+    networks:
+      - backend
+
+networks:
+  backend:

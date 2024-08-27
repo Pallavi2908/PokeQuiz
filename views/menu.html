@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/menu.css" />
+  </head>
+  <body>
+    <div class="generation-buttons-container">
+      <div class="heading-container">
+        <h1>Which generation?</h1>
+        <br /><br />
+        <h3>
+          From Kanto to Galar—<br /><br />
+          where do your skills shine the brightest?
+        </h3>
+        <br />
+        <p>Choose your region!</p>
+      </div>
+      <div class="options">
+        <audio
+          id="hoverSound"
+          src="../assets/audio/menu_sound.mp3"
+          preload="auto"
+        ></audio>
+        <div class="container kanto">
+          <div class="pokeball"></div>
+          <div class="region-info">
+            <span class="region-text"
+              ><a href="../quizzes/kanto_quiz.php">Kanto</a></span
+            >
+          </div>
+        </div>
+
+        <div class="container johto">
+          <div class="pokeball"></div>
+          <div class="region-info">
+            <span class="region-text">Johto</span>
+          </div>
+        </div>
+
+        <div class="container hoenn">
+          <div class="pokeball"></div>
+          <div class="region-info">
+            <span class="region-text">Hoenn</span>
+          </div>
+        </div>
+
+        <!-- Add more regions as needed -->
+      </div>
+    </div>
+
+    <script>
+      // Get the single audio element
+      const hoverSound = document.getElementById("hoverSound");
+
+      // Get all region containers
+      const containers = document.querySelectorAll(".pokeball");
+
+      // Add hover event listeners to each container
+      containers.forEach((container) => {
+        container.addEventListener("mouseover", () => {
+          console.log("Mouse entered button");
+
+          hoverSound.currentTime = 0;
+          hoverSound.play();
+        });
+
+        container.addEventListener("mouseout", () => {
+          hoverSound.pause();
+          hoverSound.currentTime = 0;
+        });
+      });
+    </script>
+  </body>
+</html>
+
+//nhi aarh aawaaz its breaking

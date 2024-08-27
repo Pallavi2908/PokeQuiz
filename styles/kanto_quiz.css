@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "PokeFont";
+  src: url("../fonts/PokemonSolid.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PokePixel";
+  src: url("../fonts/PressStart2P-vaV7.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-image: url("../assets/visuals/Untitledphoto.png");
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  gap: 5em;
+  justify-content: center;
+}

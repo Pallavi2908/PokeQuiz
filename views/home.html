@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéQuiz | Who's that Pokémon?</title>
+    <link rel="icon" type="image/gif" href="../assets/visuals/pokeball.gif" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body class="yellow-color-text">
+    <audio id="bg-music" autoplay loop>
+      <source src="bgm.mp3" type="audio/mpeg" preload="auto" />
+      Your browser does not support the audio element.
+    </audio>
+    <style>
+      #bg-music {
+        display: none;
+      }
+    </style>
+    <div class="container">
+      <div class="text-container">
+        <div class="snorlax-container">
+          <img
+            src="https://media.tenor.com/3Qj2zvHVl40AAAAi/snorlax-sleeping.gif"
+            alt="snorlax sleeping"
+            id="snorlax"
+          />
+        </div>
+        <div>
+          <h1>Who's that pokemon?!</h1>
+        </div>
+        <div>
+          <p class="para">
+            Test your knowledge and see if you can recognize these <br />classic
+            Pokémon from the original Nintendo game.
+          </p>
+        </div>
+      </div>
+      <div class="challenge-button-container">
+        <button class="challenge-button">
+          <a href="menu.html">
+            <span class="default-text">Are you ready for the challenge?</span>
+            <span class="hover-text">Let’s battle!</span>
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

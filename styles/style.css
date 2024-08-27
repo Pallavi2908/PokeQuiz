@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "PokeFont";
+  src: url("../fonts/PokemonSolid.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PokePixel";
+  src: url("../fonts/PressStart2P-vaV7.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.yellow-color-text {
+  color: #ffffff;
+}
+h1,
+p {
+  font-family: "PokePixel";
+  text-align: center;
+}
+p {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.container {
+  background-image: url("../assets/visuals/Untitledphoto.png");
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  gap: 5em;
+  justify-content: center;
+}
+.text-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.25em;
+  justify-content: center;
+}
+
+#snorlax {
+  width: 100px; /* Adjust as needed */
+  transition: opacity 0.5s; /* Smooth transition effect */
+}
+.challenge-button:hover {
+  cursor: pointer;
+}
+/* Container for centering */
+.challenge-button-container {
+  text-align: center;
+  margin-top: 2em;
+}
+/* Container for centering */
+.challenge-button-container {
+  text-align: center;
+  margin-top: 2em;
+}
+
+/* Button styling */
+.challenge-button {
+  font-family: "PokeFont", sans-serif; /* Use a pixel-style font */
+  font-size: 1.5em;
+  color: white;
+  background-color: rgba(217, 53, 53, 1);
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hide hover text initially */
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show hover text on hover */
+.challenge-button:hover .hover-text {
+  opacity: 1;
+}
+
+/* Hide the default text on hover */
+.challenge-button:hover .default-text {
+  opacity: 0;
+}
+
+/* Button hover effect */
+.challenge-button:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border: none;
+  transform: scale(1.1);
+}
+
+/* Add a pixelated look by using blocky borders */
+.challenge-button {
+  image-rendering: pixelated;
+}
+
+/* Pixelated moving border effect */
+.challenge-button::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: repeating-linear-gradient(
+    45deg,
+    black,
+    black 2px,
+    white 2px,
+    white 4px
+  );
+  z-index: -1;
+  animation: moveBars 1s linear infinite; /* Animation to move the bars */
+}
+
+/* Change colors of the bars on hover */
+.challenge-button:hover::after {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(217, 53, 53, 1),
+    rgba(217, 53, 53, 1) 2px,
+    white 2px,
+    white 4px
+  );
+}
+
+/* Animation for moving the bars */
+@keyframes moveBars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
