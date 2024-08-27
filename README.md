@@ -36,7 +36,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/PokeQuiz.git
+   git clone https://github.com/Pallavi2908/PokeQuiz.git
    ```
 2. **Navigate to the project directory:**
    ```bash
